@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+# druid
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/yellowcong?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 1000
+    initialSize: 100
+    maxWait: 60000
+    minIdle: 500
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    maxOpenPreparedStatements: 20
+    #thymeleaf
+    thymeleaf:
+        mode: HTML5
+        cache: false
+        prefix: classpath:/templates/
+        content-type: text/html
+        encoding: UTF-8
+        suffix: .html
+        enabled: true
+wechat:
+  openAppId: wxff042b2fc64a0633
+  openAppSecret: b61e8650ed6f8355783cd30fc05639a2
+  scope: snsapi_userinfo
+# MyBatis 基于xml配置
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    default-fetch-size: 100
+#    default-statement-timeout: 300
+#  type-aliases-package: com.ohaotian.ssoclientrest.mapper
+#  mapper-locations: classpath:com/iohaotian/ssoclientrest/map/*/xml
+cas:
+  serviceUrl: http://yellowcong.com:9000
+  clientUrl: http://yellowcong.com:8888
+  tgtUrl: ${cas.serviceUrl}/v1/tickets
+# 测试使用
+person:
+  name: zhangsan
+  age: 20
+  boss: false

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>授权结果页</title>
+</head>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+
+<body>
+    <h2>你好，授权成功!</h2><br>
+    <h3>wxMpOAuth2AccessToken 结果:</h3>
+    <p th:text="${wxMpOAuth2AccessToken}"></p>
+    <h3>openId 结果:</h3>
+    <p th:text="${openId}"></p>
+    </body>
+</html>
